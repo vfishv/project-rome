@@ -4,22 +4,20 @@
 
 package com.microsoft.connecteddevices.graphnotifications;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistration;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationResult;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStatus;
+import com.microsoft.connecteddevices.AsyncOperation;
 import com.microsoft.connecteddevices.ConnectedDevicesAccount;
-import com.microsoft.connecteddevices.ConnectedDevicesAddAccountResult;
 import com.microsoft.connecteddevices.ConnectedDevicesAccountAddedStatus;
+import com.microsoft.connecteddevices.ConnectedDevicesAddAccountResult;
+import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistration;
+import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStatus;
 import com.microsoft.connecteddevices.ConnectedDevicesPlatform;
 import com.microsoft.connecteddevices.signinhelpers.SigninHelperAccount;
-import com.microsoft.connecteddevices.AsyncOperation;
 
-import java.lang.IllegalStateException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -169,7 +167,7 @@ public class Account {
      * @param activity Application activity
      * @return The async result for this operation
      */
-    public AsyncOperation<ConnectedDevicesAccount> logoutAsync(Activity activity) {
+    public AsyncOperation<ConnectedDevicesAccount> logoutAsync(AppCompatActivity activity) {
         // Remove from the platform and sign-out
         mPlatform.getAccountManager().removeAccountAsync(mAccount);
         return mSignInHelper.signOut(activity);

@@ -3,7 +3,7 @@ package com.microsoft.rome.onesdksample_android;
 //  Copyright (c) Microsoft Corporation. All rights reserved.
 //
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.microsoft.connecteddevices.AsyncOperation;
 import com.microsoft.connecteddevices.remotesystems.commanding.LaunchUriProvider;

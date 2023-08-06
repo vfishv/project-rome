@@ -4,7 +4,7 @@
 
 package com.microsoft.rome.onesdksample_android;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.microsoft.connecteddevices.AsyncOperation;
 import com.microsoft.connecteddevices.remotesystems.commanding.RemoteLauncherOptions;

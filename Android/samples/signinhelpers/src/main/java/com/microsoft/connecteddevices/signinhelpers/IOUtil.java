@@ -4,7 +4,7 @@
 
 package com.microsoft.connecteddevices.signinhelpers;
 
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

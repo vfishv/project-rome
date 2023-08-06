@@ -10,9 +10,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 import android.text.TextUtils;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -24,7 +23,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.microsoft.connecteddevices.AsyncOperation;
-import com.microsoft.connecteddevices.EventListener;
 import com.microsoft.connecteddevices.ConnectedDevicesAccount;
 import com.microsoft.connecteddevices.ConnectedDevicesAccountType;
 

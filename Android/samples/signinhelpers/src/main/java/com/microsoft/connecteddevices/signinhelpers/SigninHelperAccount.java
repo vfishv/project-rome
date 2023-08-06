@@ -5,7 +5,7 @@
 package com.microsoft.connecteddevices.signinhelpers;
 
 import android.app.Activity;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 
 import com.microsoft.connecteddevices.ConnectedDevicesAccount;
 import com.microsoft.connecteddevices.AsyncOperation;

@@ -5,21 +5,17 @@
 package com.microsoft.connecteddevices.signinhelpers;
 
 import android.content.Context;
-import android.support.annotation.Keep;
+import androidx.annotation.Keep;
 import android.util.ArrayMap;
 import android.util.Log;
 import android.content.SharedPreferences;
 
 import com.microsoft.connecteddevices.AsyncOperation;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;

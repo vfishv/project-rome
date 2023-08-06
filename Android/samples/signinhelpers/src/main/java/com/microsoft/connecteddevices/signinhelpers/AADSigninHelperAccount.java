@@ -7,13 +7,11 @@ package com.microsoft.connecteddevices.signinhelpers;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.Keep;
-import android.support.annotation.Nullable;
+import androidx.annotation.Keep;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.ArrayMap;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -29,13 +27,10 @@ import com.microsoft.aad.adal.PromptBehavior;
 import com.microsoft.aad.adal.TokenCacheItem;
 
 import com.microsoft.connecteddevices.AsyncOperation;
-import com.microsoft.connecteddevices.EventListener;
 import com.microsoft.connecteddevices.ConnectedDevicesAccount;
 import com.microsoft.connecteddevices.ConnectedDevicesAccountType;
 
-import java.lang.InterruptedException;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.List;
 
 /**

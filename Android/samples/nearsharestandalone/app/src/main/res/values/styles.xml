@@ -17,17 +17,17 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="AppTheme.Heading">
-        <item name="android:background">@color/blue</item>
+        <item name="background">@color/blue</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="ListItem"/>
     <style name="ListItem.Normal">
-        <item name="android:background">@color/white</item>
+        <item name="background">@color/white</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
     <style name="ListItem.Selected">
-        <item name="android:background">@color/invertedBackground</item>
+        <item name="background">@color/invertedBackground</item>
         <item name="android:textColor">@color/white</item>
     </style>
 

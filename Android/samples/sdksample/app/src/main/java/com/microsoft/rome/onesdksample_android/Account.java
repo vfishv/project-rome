@@ -4,35 +4,26 @@
 
 package com.microsoft.rome.onesdksample_android;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.ArrayMap;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 
-import com.microsoft.connecteddevices.ConnectedDevicesAccessTokenRequest;
+import com.microsoft.connecteddevices.AsyncOperation;
+import com.microsoft.connecteddevices.ConnectedDevicesAccount;
+import com.microsoft.connecteddevices.ConnectedDevicesAccountAddedStatus;
+import com.microsoft.connecteddevices.ConnectedDevicesAddAccountResult;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistration;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationResult;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStatus;
-import com.microsoft.connecteddevices.ConnectedDevicesAccount;
-import com.microsoft.connecteddevices.ConnectedDevicesAccountManager;
-import com.microsoft.connecteddevices.ConnectedDevicesAddAccountResult;
-import com.microsoft.connecteddevices.ConnectedDevicesAccountAddedStatus;
-import com.microsoft.connecteddevices.ConnectedDevicesRemoveAccountResult;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationManager;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationState;
 import com.microsoft.connecteddevices.ConnectedDevicesPlatform;
 import com.microsoft.connecteddevices.remotesystems.commanding.AppServiceProvider;
 import com.microsoft.connecteddevices.remotesystems.commanding.LaunchUriProvider;
-import com.microsoft.connecteddevices.signinhelpers.SigninHelperAccount;
 import com.microsoft.connecteddevices.remotesystems.commanding.RemoteSystemAppRegistration;
 import com.microsoft.connecteddevices.remotesystems.commanding.RemoteSystemAppRegistrationPublishResult;
 import com.microsoft.connecteddevices.remotesystems.commanding.RemoteSystemAppRegistrationPublishStatus;
-import com.microsoft.connecteddevices.AsyncOperation;
-import com.microsoft.connecteddevices.ConnectedDevicesAccount;
+import com.microsoft.connecteddevices.signinhelpers.SigninHelperAccount;
 
-import java.lang.IllegalStateException;
-import java.lang.Throwable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -218,7 +209,7 @@ public class Account {
      * @param activity Application activity
      * @return The async result for this operation
      */
-    public AsyncOperation<ConnectedDevicesAccount> logoutAsync(Activity activity) {
+    public AsyncOperation<ConnectedDevicesAccount> logoutAsync(AppCompatActivity activity) {
         clearSubcomponents();
         return mSignInHelper.signOut(activity);
     }

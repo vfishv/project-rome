@@ -4,23 +4,22 @@
 
 package com.microsoft.connecteddevices.graphnotifications;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import com.google.android.material.tabs.TabLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -43,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * The {@link PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link FragmentPagerAdapter} derivative, which will keep every
      * loaded fragment in memory. If this becomes too memory intensive, it
      * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     * {@link FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    static void setupNotificationsManager(final Activity activity) {
+    static void setupNotificationsManager(final AppCompatActivity activity) {
         if (sConnectedDevicesManager.getSignedInAccount() != null) {
             Log.d(TAG, "Setup Notifications manager");
             sNotificationsManager = sConnectedDevicesManager.getSignedInAccount().getNotificationsManager();
@@ -289,9 +288,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     static class NotificationArrayAdapter extends ArrayAdapter<UserNotification> {
-        private final Activity mActivity;
+        private final AppCompatActivity mActivity;
 
-        public NotificationArrayAdapter(Context context, List<UserNotification> items, Activity activity) {
+        public NotificationArrayAdapter(Context context, List<UserNotification> items, AppCompatActivity activity) {
             super(context, R.layout.notifications_list_item, items);
             mActivity = activity;
         }

@@ -4,27 +4,26 @@
 
 package com.microsoft.connecteddevices.graphnotifications;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.ArrayMap;
 import android.util.Log;
 
 import com.microsoft.connecteddevices.AsyncOperation;
+import com.microsoft.connecteddevices.ConnectedDevicesAccessTokenInvalidatedEventArgs;
 import com.microsoft.connecteddevices.ConnectedDevicesAccessTokenRequest;
 import com.microsoft.connecteddevices.ConnectedDevicesAccessTokenRequestedEventArgs;
-import com.microsoft.connecteddevices.ConnectedDevicesAccessTokenInvalidatedEventArgs;
 import com.microsoft.connecteddevices.ConnectedDevicesAccount;
 import com.microsoft.connecteddevices.ConnectedDevicesAccountManager;
 import com.microsoft.connecteddevices.ConnectedDevicesAccountType;
-import com.microsoft.connecteddevices.ConnectedDevicesAddAccountResult;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistration;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationResult;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStateChangedEventArgs;
-import com.microsoft.connecteddevices.ConnectedDevicesNotificationType;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationManager;
+import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationResult;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationState;
+import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStateChangedEventArgs;
 import com.microsoft.connecteddevices.ConnectedDevicesNotificationRegistrationStatus;
+import com.microsoft.connecteddevices.ConnectedDevicesNotificationType;
 import com.microsoft.connecteddevices.ConnectedDevicesPlatform;
 import com.microsoft.connecteddevices.signinhelpers.AADSigninHelperAccount;
 import com.microsoft.connecteddevices.signinhelpers.MSASigninHelperAccount;
@@ -116,7 +115,7 @@ public class ConnectedDevicesManager {
      * @param activity Application activity
      * @return The async result for when this operation completes
      */
-    public synchronized AsyncOperation<Boolean> signInMsaAsync(final Activity activity) {
+    public synchronized AsyncOperation<Boolean> signInMsaAsync(final AppCompatActivity activity) {
         // Create a SigninHelperAccount with a client id for msa, a map of requested scopes to override, and the context
         final Map<String, String[]> msaScopeOverrides = new ArrayMap<>();
         msaScopeOverrides.put("https://activity.windows.com/UserActivity.ReadWrite.CreatedByApp",
@@ -143,7 +142,7 @@ public class ConnectedDevicesManager {
      * @param activity Application activity
      * @return The async result for when this operation completes
      */
-    public synchronized AsyncOperation<Boolean> signInAadAsync(final Activity activity) {
+    public synchronized AsyncOperation<Boolean> signInAadAsync(final AppCompatActivity activity) {
         // Create a SigninHelperAccount with a client id for msa, a map of requested scopes to override, and the context
         SigninHelperAccount signInHelper = new AADSigninHelperAccount(Secrets.AAD_CLIENT_ID, Secrets.AAD_REDIRECT_URI, (Context)activity);
 
@@ -166,7 +165,7 @@ public class ConnectedDevicesManager {
      * @param activity Application activity
      * @return The async result for when this operation completes
      */
-    public synchronized AsyncOperation<Boolean> logout(Activity activity) {
+    public synchronized AsyncOperation<Boolean> logout(AppCompatActivity activity) {
         // First remove this account from the list of "ready to go" accounts so it cannot be used while logging out
         Account accountToRemove = getSignedInAccount();
         mAccounts.remove(accountToRemove);
