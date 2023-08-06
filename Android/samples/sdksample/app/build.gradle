@@ -11,7 +11,7 @@ android {
         }
     }
 
-    compileSdkVersion 28
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.microsoft.rome.onesdksample_android"
         minSdkVersion 19
