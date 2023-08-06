@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 34
+    namespace 'com.microsoft.connecteddevices.signinhelpers'
 
     defaultConfig {
         minSdkVersion 19

@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 34
+    namespace 'com.microsoft.connecteddevices.graphnotifications'
+
     defaultConfig {
         applicationId "com.microsoft.connecteddevices.graphnotifications"
         minSdkVersion 19

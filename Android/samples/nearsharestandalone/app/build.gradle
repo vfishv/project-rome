@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 34
+    namespace 'com.microsoft.connecteddevices.nearshare'
+
     defaultConfig {
         applicationId "com.microsoft.connecteddevices.nearshare"
         minSdkVersion 19

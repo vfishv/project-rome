@@ -12,6 +12,8 @@ android {
     }
 
     compileSdkVersion 34
+    namespace 'com.microsoft.rome.onesdksample_android'
+
     defaultConfig {
         applicationId "com.microsoft.rome.onesdksample_android"
         minSdkVersion 19
